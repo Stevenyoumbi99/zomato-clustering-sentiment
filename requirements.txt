@@ -7,6 +7,5 @@ scikit-learn
 nltk
 contractions
 wordcloud
-xgboost
 joblib
 ipykernel
