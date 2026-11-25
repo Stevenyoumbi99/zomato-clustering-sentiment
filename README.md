@@ -24,17 +24,22 @@ I turned the review text into features with TF-IDF and trained a tuned Logistic 
 
 I used 2 datasets:
 
-- **Zomato Restaurant names and Metadata.csv**: 105 restaurants with their cost, cuisines, collections and links
+- **Zomato Restaurant names and Metadata.csv**: 105 restaurants with their estimated cost per person, cuisines, collections and links
 - **Zomato Restaurant reviews.csv**: 10,000 reviews with the reviewer, rating, review text and timing
 
 ## Main steps
 
 - **Data cleaning**: fixing data types, handling missing values and duplicates, and merging the two datasets
-- **EDA**: 15 charts to understand costs, cuisines, ratings and review behaviour
+- **EDA**: 18 charts to understand costs, cuisines, ratings and review behaviour
+- **Cost by cuisine**: comparing the cost per person across the most common cuisines
+- **Best restaurant for each cuisine**: finding the 3 best rated restaurants for each of the 6 most common cuisines
+- **Identifying the critics**: spotting the reviewers with 1,000+ followers, since their opinion reaches a lot of people
 - **Hypothesis testing**: statistical tests to check a few assumptions I made during the EDA
 - **Feature engineering**: encoding categorical features, log transforming skewed columns, scaling, and reducing dimensions with PCA
 - **Text preprocessing**: expanding contractions, lowercasing, removing punctuation and stopwords, and lemmatizing. I made sure to keep negation words like "not" and "never", since removing them would flip the meaning of a lot of reviews
 - **Models**: K-Means and hierarchical clustering for the restaurants, and a Logistic Regression model for sentiment that I tuned with GridSearchCV
+- **Visualizing the clusters**: plotting the restaurants on the first 2 PCA components to see how the 5 segments separate
+- **A strategy for each segment**: practical ideas for how Zomato could work with each type of restaurant
 - **Explainability**: looking at which words push a review towards positive or negative, and what makes each cluster different
 - **Saving the models**: both final models are saved with joblib (`zomato_clustering_model.joblib` and `zomato_sentiment_model.joblib`)
 
@@ -43,7 +48,12 @@ I used 2 datasets:
 - `Zomato_Clustering_Sentiment.ipynb`: the full notebook
 - `Zomato Restaurant names and Metadata.csv` and `Zomato Restaurant reviews.csv`: the datasets
 - `zomato_clustering_model.joblib` and `zomato_sentiment_model.joblib`: the saved models
+- `Zomato_Clustering_Sentiment_Presentation.pptx`: my presentation of the project
 - `requirements.txt`: the Python packages I used
+
+## Presentation
+
+I also made a presentation of the project: `Zomato_Clustering_Sentiment_Presentation.pptx`. It has 18 slides, and the script I used for the video is in the speaker notes.
 
 ## How to run it (Windows)
 
