@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+Sample_ML_Submission_Template.ipynb
+Zomato project.pptx
